@@ -9,7 +9,7 @@ Data cleaning and exploratory data analysis (EDA) were performed before performi
 
 ### **Data Cleaning**
 
-A large portion of the data cleaning process focused on addressing null values. The dataset contained significant null values in columns such as CO2 emissions, first owner status (whether the vehicle has had one owner), vehicle version, vehicle generation, origin country, and the car's first registration date. As shown in the [null matrix](Plots/null_matrix.png), many of these columns contained null values for about half of the dataset. These columns were dropped, except for "first owner," which was filled in based on the assumption that vehicles with missing first owner information likely had more than one owner. For the remaining features with null values, observations were dropped as they were relatively few and did not lead to significant information loss.
+A large portion of the data cleaning process focused on addressing null values. The dataset contained significant null values in columns such as CO2 emissions, first owner status (whether the vehicle has had one owner), vehicle version, vehicle generation, origin country, and the car's first registration date. As shown in the ![null matrix](Plots/null_matrix.png), many of these columns contained null values for about half of the dataset. These columns were dropped, except for "first owner," which was filled in based on the assumption that vehicles with missing first owner information likely had more than one owner. For the remaining features with null values, observations were dropped as they were relatively few and did not lead to significant information loss.
 
 ### **Exploratory Data Analysis (EDA)**
 
