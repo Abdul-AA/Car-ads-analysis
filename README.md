@@ -25,7 +25,7 @@ The business impact is significant as this segmentation allows Definity to perso
 
 ### Cluster Centroids
 
-| Cluster | Mileage_km | Power_HP | Displacement_cm3 | Price_CAD | Years_From_Production_To_Offer | Type            |
+| Cluster | Mileage (km) | Power (HP) | Engine Size (cm3) | Price (CAD) | Age (Years) | Type            |
 |---------|------------|----------|------------------|-----------|-------------------------------|-----------------|
 | 0       | 150,000    | 95       | 1,402            | 7,173     | 10                            | City Car        |
 | 1       | 51,000     | 145      | 1,640            | 27,000    | 3                             | SUV             |
