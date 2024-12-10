@@ -24,7 +24,7 @@ The identified clusters offer nuanced groupings of vehicles, each with distinct 
 
 Integrating these cluster insights into Definity's operations can mitigate financial risks, enhance underwriting precision, and improve customer retention. By offering tailored coverage options and focused marketing campaigns, Definity strengthens its market position while delivering exceptional customer experiences. This approach aligns with Definity's ambition to lead the industry in innovation, ensuring both operational efficiency and customer satisfaction.
 
-For detailed insights into the methodology, thought process, results, business implications, threats to validity, and next steps, check the [vehicle_segmentation notebook](vehicle_segmentation.ipynb).
+For more information on the methodology, thought process, results, business implications, threats to validity, and next steps, check the [vehicle_segmentation notebook](vehicle_segmentation.ipynb).
 
 ### Cluster Centroids and Distribution
 
