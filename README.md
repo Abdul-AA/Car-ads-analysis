@@ -7,13 +7,14 @@ According to the Insurance Bureau of Canada, insurance fraud costs Canadians wel
 
 Data cleaning and exploratory data analysis (EDA) were performed before performing the three main tasks. 
 
-### **Data Cleaning**
+### Data Cleaning
+A vast majority of the data cleaning process was dealing with null values. The dataset contains substantial null values in columns such as CO2 emissions, first owner (whether the vehicle has had one owner), vehicle version, vehicle generation, origin country, and car first registration day, as shown in the null matrix below:
 
-A large portion of the data cleaning process focused on addressing null values. The dataset contained significant null values in columns such as CO2 emissions, first owner status (whether the vehicle has had one owner), vehicle version, vehicle generation, origin country, and the car's first registration date. As shown in the ![null matrix](Plots/null_matrix.png), many of these columns contained null values for about half of the dataset. These columns were dropped, except for "first owner," which was filled in based on the assumption that vehicles with missing first owner information likely had more than one owner. For the remaining features with null values, observations were dropped as they were relatively few and did not lead to significant information loss.
+![Null Matrix](Plots/null_matrix.png)
 
-### **Exploratory Data Analysis (EDA)**
+For those columns that contained null values for about half of the dataset, the columns were dropped, except for "first owner," which was filled accordingly. I discerned that vehicles that are not first owners had null values, so I filled them accordingly. For the remaining few null values, those observations were dropped as they were not many and wouldn't lead to consequential information loss.
 
-For further insights, you can visit the [Vehicle Segmentation EDA notebook](file:///Users/Abdul/Desktop/Car-ads-analysis/vehicle_segmentation.ipynb).
+For EDA insights, visit the [vehicle_segmentation notebook](vehicle_segmentation.ipynb).
 
 
 Vehichle Segmentation
