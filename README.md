@@ -10,7 +10,7 @@ A vast majority of the data cleaning process was dealing with null values. The d
 
 ![Null Matrix](Plots/null_matrix.png)
 
-For those columns that contained null values for about half of the dataset, the columns were dropped, except for "first owner," which was filled accordingly. I discerned that vehicles that are not first owners had null values, so I filled them accordingly. For the remaining few null values, those observations were dropped as they were not many and wouldn't lead to consequential information loss.
+For those columns that contained null values for about half of the dataset, the columns were dropped, except for "first owner," because I discerned that vehicles that are not first owners had null values, so I filled them accordingly. For the remaining few null values, those observations were dropped as they were not many and wouldn't lead to consequential information loss.
 
 For EDA insights, visit the [vehicle_segmentation notebook](vehicle_segmentation.ipynb).
 
