@@ -17,11 +17,20 @@ For EDA insights, visit the [vehicle_segmentation notebook](vehicle_segmentation
 
 ## Vehicle Segmentation
 
-To streamline fraud prevention and improve risk assessment, K Prototypes clustering was used to segment vehicles into three distinct groups based on key features like **Mileage_km**, **Power_HP**, **Displacement_cm3**, **Price_CAD**, **Years_From_Production_To_Offer**, and **Type**. The optimal number of clusters was determined using the Elbow Method and Silhouette Scores, with 3 clusters providing the best balance between cluster cohesion and separation. K Prototypes was chosen for its ability to handle both categorical and numeric features, ensuring robust segmentation despite the mixed data types.
+To streamline fraud prevention and improve risk assessment, K Prototypes clustering was used to segment vehicles into three groups based on key features that were carefully selected based on insights discerned from EDA and also practical business relavance which include**Mileage_km**, **Power_HP**, **Displacement_cm3**, **Price_CAD**, **Years_From_Production_To_Offer**, and **Type**. The optimal number of clusters was determined using the Elbow Method and Silhouette Scores, with 3 clusters providing the best balance between cluster cohesion and separation. K Prototypes was chosen for its ability to handle both categorical and numeric features, ensuring robust segmentation despite the mixed data types.
 
-The identified clusters provide insights into vehicle characteristics in each cluster. The **Older City Commuters (Cluster 0)** are compact, older cars with low engine power and relatively high mileage. The **Modern Power Vehicles (Cluster 1)** consist of newer, higher-powered vehicles with lower mileage and higher prices. The **Seasoned Family Travelers (Cluster 2)** include older, high-mileage station wagons. These clusters enable Definity to better target high-risk vehicles, improve underwriting, and optimize marketing strategies.
+The identified clusters provide insights into vehicle characteristics in each cluster. The **Older City Commuters (Cluster 0)** are compact, older cars with low engine power and relatively high mileage. The **Modern Power Vehicles (Cluster 1)** consist of newer, higher-powered vehicles with lower mileage and higher prices. The **Seasoned Family Travelers (Cluster 2)** include older, high-mileage station wagons. Definity can explore historical data for vehicles in each cluster to determine preferences, the type of claims associated with each cluster, the ones that are high risk (mitigating the risks of information assymetry inclusidung adverse seection and moral hazard) and leveraging the insighs to  Increase customer acquisition and retention by crafting appealing offers tailored to each cluster's preferences, Reduce information asymmetry by offering coverage options that align with the risk profiles and needs of each cluster.
+, and Identify and mitigate fraudulent claims, ensuring cost savings and operational efficiency.
+eg Claims from a vehicle that deviate from the historical data trends of its cluster (e.g., unusually frequent or expensive claims) can be flagged for deeper scrutiny.
+Clusters with higher instances of fraud can be monitored more intensively.
+These clusters enable Definity to better target high-risk vehicles, improve underwriting, and optimize marketing strategies.
 
-The business impact is significant as this segmentation allows Definity to personalize pricing, reduce fraudulent claims, and streamline risk assessment. By identifying vehicles that are more prone to fraud, the company can optimize claim management and pricing models, ultimately improving customer satisfaction and operational efficiency.
+By strategically integrating cluster insights into fraud detection, tailored coverage, and targeted marketing, Definity Insurance can:
+- Mitigate financial risks associated with fraudulent claims.
+- Deliver personalized, competitive coverage options to customers.
+- Strengthen market position through focused, customer-centric campaigns.
+
+This approach not only reduces operational inefficiencies but also enhances customer experience, establishing Definity as an industry leader in innovation which aligns with Definity's ambition. :)
 
 ### Cluster Centroids
 
