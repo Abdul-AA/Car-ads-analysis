@@ -16,7 +16,7 @@ A vast majority of the data cleaning process was dealing with null values. The d
 
 For those columns that contained null values for about half of the dataset, the columns were dropped, except for "first owner," because I discerned that vehicles that are not first owners had null values, so I filled them accordingly. For the remaining few null values, those observations were dropped as they were not many and wouldn't lead to consequential information loss.
 
-For insights from the exploratory data analysis, visit the [vehicle_segmentation notebook](vehicle-segmentation.ipynb).
+For insights from the exploratory data analysis, visit the [vehicle segmentation notebook](vehicle-segmentation.ipynb).
 
 ## Vehicle Segmentation
 
@@ -42,6 +42,6 @@ Actionable insights can be derived by analyzing historical data within each clus
 
 ![Cluster Visualization](Plots/cluster_viz.png)
 
-For more information on the methodology, thought process, results, business implications, threats to validity, and next steps, check the [vehicle_segmentation notebook](vehicle_segmentation.ipynb).
+For more information on the methodology, thought process, results, business implications, threats to validity, and next steps, check the [vehicle_segmentation notebook](vehicle-segmentation.ipynb).
 
 
