@@ -38,10 +38,50 @@ Actionable insights can be derived by analyzing historical data within each clus
 
 ### Cluster Visualization
 
-**Figure 2. Cluster Visualization Based on Key Features**
+**Figure 2. Visualization of Clusters**
+*This plot is for visualization purposes only. While the two principal components that define the axes retain the variability in the data, thereby enabling visible cluster separation, no direct insights can be inferred solely from the plot.*
 
 ![Cluster Visualization](Plots/cluster_viz.png)
 
 For more information on the methodology, thought process, results, business implications, threats to validity, and next steps, check the [vehicle_segmentation notebook](vehicle-segmentation.ipynb).
 
 
+
+## Enhancing Vehicle Risk Assessment Through Anomaly Detection
+
+One of the challenges in insurance is addressing information asymmetry, where customers often have more knowledge about their vehicles than insurers. Some customers may even withhold or misrepresent information. To mitigate the associated risks, insurers conduct thorough underwriting and risk assessments to set appropriate premiums. What if there was a way to detect claims that deviate significantly from the norm? Anomaly detection provides such a solution for Definity Insurance. By identifying unusual patterns in vehicle features such as price, mileage, and age, Definity can more accurately assess vehicle risk profiles. For instance, a car with exceptionally low mileage for its age might indicate odometer tampering or extensive repairs due to prior accidents, both of which suggest elevated risk. Leveraging anomaly detection enables Definity to refine pricing models, offering customized premiums based on a vehicle’s true condition instead of relying solely on standard parameters like make and model.
+
+To develop this approach, the 200,000 offers in the car ads dataset were analyzed using five different anomaly detection techniques focusing on price, age, mileage, engine size, and power. Since anomaly detection is an unsupervised learning problem, the evaluation of these techniques required a mix of intuition and quantitative measures such as the silhouette score and the Kolmogorov-Smirnov (KS) test. The silhouette score evaluates the cohesion and separation of clusters, treating anomalies and inliers as two distinct clusters. The KS test compares two samples to determine whether they come from the same distribution, with the null hypothesis being that they do. Based on these metrics and intuitive judgment, Isolation Forest was selected as the most effective technique. A contamination level of 10% was used, meaning 10% of the dataset was flagged as anomalous *See Figure 3 to visualize detected anomalies and Figure 4 to see a side-by-side comparison of anomalies and inliers for each feature.*
+
+**Figure 3. Visualization of Detected Anomalies**
+
+![Visualization of Detected Anomalies](Plots/cluster_viz.png)
+
+A comparison of anomalies and inliers revealed key patterns. For example, vehicle offers with implausible claims, such as mileage exceeding 1.1 billion, were flagged as anomalies, as shown in Table 2. Similarly, vehicles priced as high as 2.2 million were also identified as outliers. Across all features, vehicles significantly deviating from market norms were detected, potentially including rare and luxury models or erroneous or fraudulent entries. These findings highlight the potential for anomaly detection to streamline underwriting, refine risk profiling, and combat fraud, overinsurance, and underinsurance. By investigating flagged anomalies, Definity can enhance its decision-making processes and offer more accurate insurance products.
+
+**Table 2. Summary Table of Anomalous and Normal Vehicle Offers**
+
+#### Anomalies
+| Feature                        | Mean      | Std Dev   | Median   | Min   | Max          |
+|--------------------------------|-----------|-----------|----------|-------|--------------|
+| Mileage (km)                   | 204,455.95 | 7,945,569.33 | 91,000.00 | 1.00  | 1,111,111,111.00 |
+| Power (HP)                     | 291.99     | 135.22    | 292.00   | 1.00  | 1,300.00     |
+| Engine Size (Displacement_cm3) | 3,254.33   | 1,257.29  | 2,993.00 | 400.00| 8,400.00     |
+| Price (CAD)                    | 55,512.87  | 65,629.16 | 32,165.00| 211.00| 2,273,975.00 |
+| Age (Years)                    | 12.29      | 13.33     | 8.00     | 0.00  | 106.00       |
+
+#### Inliers
+| Feature                        | Mean      | Std Dev   | Median   | Min   | Max         |
+|--------------------------------|-----------|-----------|----------|-------|-------------|
+| Mileage (km)                   | 140,098.25| 93,314.31 | 149,035.00| 1.00  | 2,930,000.00|
+| Power (HP)                     | 135.54    | 44.92     | 130.00   | 1.00  | 340.00      |
+| Engine Size (Displacement_cm3) | 1,730.11  | 426.24    | 1,685.00 | 400.00| 4,015.00    |
+| Price (CAD)                    | 16,105.11 | 15,277.50 | 10,689.00| 190.00| 100,426.00  |
+| Age (Years)                    | 8.60      | 5.66      | 9.00     | 0.00  | 32.00       |
+
+
+**Figure 4.Comparison of Anomalies and Inliers Distributions**
+
+![Comparison of Anomalies and Inliers Distributions](Plots/violin_plot.png)
+
+For more information on the methodology, feature selection, thought process , results, business implications, threats to validity, and next steps, check the [anomaly-detection notebook](anomaly-detection.ipynb).
