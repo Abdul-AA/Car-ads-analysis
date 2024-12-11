@@ -55,7 +55,7 @@ To develop this approach, the 200,000 offers in the car ads dataset were analyze
 
 **Figure 3. Visualization of Detected Anomalies**
 
-![Visualization of Detected Anomalies](Plots/cluster_viz.png)
+![Visualization of Detected Anomalies](Plots/anomalies_plot.png)
 
 A comparison of anomalies and inliers revealed key patterns. For example, vehicle offers with implausible claims, such as mileage exceeding 1.1 billion, were flagged as anomalies, as shown in Table 2. Similarly, vehicles priced as high as 2.2 million were also identified as outliers. Across all features, vehicles significantly deviating from market norms were detected, potentially including rare and luxury models or erroneous or fraudulent entries. These findings highlight the potential for anomaly detection to streamline underwriting, refine risk profiling, and combat fraud, overinsurance, and underinsurance. By investigating flagged anomalies, Definity can enhance its decision-making processes and offer more accurate insurance products.
 
