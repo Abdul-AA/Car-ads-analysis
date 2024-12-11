@@ -1,5 +1,4 @@
-# Leveraging Vehicle Ads Data for Fraud Prevention and Operational Efficiency 
-
+#Enhancing Fraud Prevention and Operational Efficiency Through Vehicle Ads Data
 ## Introduction
 
 According to the Insurance Bureau of Canada, insurance fraud costs Canadians well over $1 billion a year in added insurance premiums ([source](https://www.ibc.ca/news-insights/news/vigilance-is-key-in-fighting-insurance-fraud)). Preventing this fraud will not only reduce costs for Definity but also improve customer satisfaction. In this project, using the [Poland Cars for Sale dataset](https://www.kaggle.com/datasets/bartoszpieniak/poland-cars-for-sale-dataset), I have performed vehicle segmentation, anomaly detection, and time series analysis with the goal of generating insights to enhance operational efficiency and streamline fraud prevention for Definity.
