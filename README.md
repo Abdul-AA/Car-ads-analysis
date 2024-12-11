@@ -13,7 +13,7 @@ A vast majority of the data cleaning process was dealing with null values. The d
 ![Null Matrix](Plots/null_matrix.png)
 
 
-For insights from the exploratory data analysis step, refer to the [vehicle segmentation notebook](1. vehicle-segmentation.ipynb).
+For insights from the exploratory data analysis step, refer to the [vehicle segmentation notebook](1.vehicle-segmentation.ipynb).
 
 ## Vehicle Segmentation
 
@@ -44,7 +44,7 @@ Valuable insights can be derived by analyzing historical data within each cluste
 
 ![Cluster Visualization](Plots/cluster_viz.png)
 
-For more information on the methodology, thought process, results, business implications, threats to validity, and next steps, check the [vehicle_segmentation notebook](1. vehicle-segmentation.ipynb).
+For more information on the methodology, thought process, results, business implications, threats to validity, and next steps, check the [vehicle_segmentation notebook](1.vehicle-segmentation.ipynb).
 
 
 
@@ -89,7 +89,7 @@ A comparison of anomalies and inliers revealed key patterns. For example, vehicl
 
 ![Comparison of Anomalies and Inliers Distributions](Plots/violin_plot.png)
 
-For more information on the methodology, feature selection, thought process , results, business implications, threats to validity, and next steps, check the [anomaly-detection notebook](2.-anomaly-detection.ipynb).
+For more information on the methodology, feature selection, thought process , results, business implications, threats to validity, and next steps, check the [anomaly-detection notebook](2.anomaly-detection.ipynb).
 
 
 ## Leveraging
