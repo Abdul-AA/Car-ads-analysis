@@ -89,7 +89,7 @@ A comparison of anomalies and inliers revealed key patterns. For example, vehicl
 
 ![Comparison of Anomalies and Inliers Distributions](Plots/violin_plot.png)
 
-For more information on the methodology, feature selection, thought process , results, business implications, threats to validity, and next steps, check the [anomaly-detection notebook](2. anomaly-detection.ipynb).
+For more information on the methodology, feature selection, thought process , results, business implications, threats to validity, and next steps, check the [anomaly-detection notebook](2.-anomaly-detection.ipynb).
 
 
 ## Leveraging
