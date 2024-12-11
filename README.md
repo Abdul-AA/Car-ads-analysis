@@ -1,5 +1,4 @@
-# Leveraging Vehicle Ads Data for Fraud Prevention and Operational Efficiency 
-
+# Optimizing Insurance Fraud Prevention and Risk Assessment 
 ## Introduction
 
 According to the Insurance Bureau of Canada, insurance fraud costs Canadians well over $1 billion a year in added insurance premiums ([source](https://www.ibc.ca/news-insights/news/vigilance-is-key-in-fighting-insurance-fraud)). Preventing this fraud will not only reduce costs for Definity but also improve customer satisfaction. In this project, using the [Poland Cars for Sale dataset](https://www.kaggle.com/datasets/bartoszpieniak/poland-cars-for-sale-dataset), I have performed vehicle segmentation, anomaly detection, and time series analysis with the goal of generating insights to enhance operational efficiency and streamline fraud prevention for Definity.
@@ -39,6 +38,7 @@ Actionable insights can be derived by analyzing historical data within each clus
 ### Cluster Visualization
 
 **Figure 2. Visualization of Clusters**
+
 *This plot is for visualization purposes only. While the two principal components that define the axes retain the variability in the data, thereby enabling visible cluster separation, no direct insights can be inferred solely from the plot.*
 
 ![Cluster Visualization](Plots/cluster_viz.png)
@@ -51,11 +51,13 @@ For more information on the methodology, thought process, results, business impl
 
 One of the challenges in insurance is addressing information asymmetry, where customers often have more knowledge about their vehicles than insurers. Some customers may even withhold or misrepresent information. To mitigate the associated risks, insurers conduct thorough underwriting and risk assessments to set appropriate premiums. What if there was a way to detect claims that deviate significantly from the norm? Anomaly detection provides such a solution for Definity Insurance. By identifying unusual patterns in vehicle features such as price, mileage, and age, Definity can more accurately assess vehicle risk profiles. For instance, a car with exceptionally low mileage for its age might indicate odometer tampering or extensive repairs due to prior accidents, both of which suggest elevated risk. Leveraging anomaly detection enables Definity to refine pricing models, offering customized premiums based on a vehicle’s true condition instead of relying solely on standard parameters like make and model.
 
-To develop this approach, the 200,000 offers in the car ads dataset were analyzed using five different anomaly detection techniques focusing on price, age, mileage, engine size, and power. Since anomaly detection is an unsupervised learning problem, the evaluation of these techniques required a mix of intuition and quantitative measures such as the silhouette score and the Kolmogorov-Smirnov (KS) test. The silhouette score evaluates the cohesion and separation of clusters, treating anomalies and inliers as two distinct clusters. The KS test compares two samples to determine whether they come from the same distribution, with the null hypothesis being that they do. Based on these metrics and intuitive judgment, Isolation Forest was selected as the most effective technique. A contamination level of 10% was used, meaning 10% of the dataset was flagged as anomalous *See Figure 3 to visualize detected anomalies and Figure 4 to see a side-by-side comparison of anomalies and inliers for each feature.*
+To develop this approach, the 200,000 offers in the car ads dataset were analyzed using five different anomaly detection techniques focusing on price, age, mileage, engine size, and power. Since anomaly detection is an unsupervised learning problem, the evaluation of these techniques required a mix of intuition and quantitative measures such as the silhouette score and the Kolmogorov-Smirnov (KS) test. The silhouette score evaluates the cohesion and separation of clusters, treating anomalies and inliers as two distinct clusters. The KS test compares two samples to determine whether they come from the same distribution, with the null hypothesis being that they do. Based on these metrics and intuitive judgment, Isolation Forest was selected as the most effective technique. A contamination level of 10% was used, meaning 10% of the dataset was flagged as anomalous. *See Figure 3 to visualize detected anomalies and Figure 4 to see a side-by-side comparison of anomalies and inliers for each feature.*
 
 **Figure 3. Visualization of Detected Anomalies**
 
-![Visualization of Detected Anomalies](Plots/cluster_viz.png)
+*The detected anomalies account for 10% of all offers, amounting to just over 20,000 offers.*
+
+![Visualization of Detected Anomalies](Plots/anomalies_plot.png)
 
 A comparison of anomalies and inliers revealed key patterns. For example, vehicle offers with implausible claims, such as mileage exceeding 1.1 billion, were flagged as anomalies, as shown in Table 2. Similarly, vehicles priced as high as 2.2 million were also identified as outliers. Across all features, vehicles significantly deviating from market norms were detected, potentially including rare and luxury models or erroneous or fraudulent entries. These findings highlight the potential for anomaly detection to streamline underwriting, refine risk profiling, and combat fraud, overinsurance, and underinsurance. By investigating flagged anomalies, Definity can enhance its decision-making processes and offer more accurate insurance products.
 
