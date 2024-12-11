@@ -13,7 +13,7 @@ A vast majority of the data cleaning process was dealing with null values. The d
 ![Null Matrix](Plots/null_matrix.png)
 
 
-For insights from the exploratory data analysis, visit the [vehicle segmentation notebook](vehicle-segmentation.ipynb).
+For insights from the exploratory data analysis, refer to the [vehicle segmentation notebook](vehicle-segmentation.ipynb).
 
 ## Vehicle Segmentation
 
