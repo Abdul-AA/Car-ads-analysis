@@ -39,6 +39,7 @@ Actionable insights can be derived by analyzing historical data within each clus
 ### Cluster Visualization
 
 **Figure 2. Visualization of Clusters**
+
 *This plot is for visualization purposes only. While the two principal components that define the axes retain the variability in the data, thereby enabling visible cluster separation, no direct insights can be inferred solely from the plot.*
 
 ![Cluster Visualization](Plots/cluster_viz.png)
@@ -54,6 +55,8 @@ One of the challenges in insurance is addressing information asymmetry, where cu
 To develop this approach, the 200,000 offers in the car ads dataset were analyzed using five different anomaly detection techniques focusing on price, age, mileage, engine size, and power. Since anomaly detection is an unsupervised learning problem, the evaluation of these techniques required a mix of intuition and quantitative measures such as the silhouette score and the Kolmogorov-Smirnov (KS) test. The silhouette score evaluates the cohesion and separation of clusters, treating anomalies and inliers as two distinct clusters. The KS test compares two samples to determine whether they come from the same distribution, with the null hypothesis being that they do. Based on these metrics and intuitive judgment, Isolation Forest was selected as the most effective technique. A contamination level of 10% was used, meaning 10% of the dataset was flagged as anomalous. *See Figure 3 to visualize detected anomalies and Figure 4 to see a side-by-side comparison of anomalies and inliers for each feature.*
 
 **Figure 3. Visualization of Detected Anomalies**
+
+*The detected anomalies account for 10% of all offers, amounting to just over 20,000 offers.*
 
 ![Visualization of Detected Anomalies](Plots/anomalies_plot.png)
 
