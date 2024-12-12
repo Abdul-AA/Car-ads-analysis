@@ -108,3 +108,5 @@ These findings present a strategic opportunity for targeted marketing. Collabora
 
 **Figure 6. Daily Offers Over Time**  
 ![Daily Offers Over Time](Plots/daily_offers.png)
+
+For more information on the methodology, feature selection, thought process , results, business implications, threats to validity, and next steps, check the [time-based-analysis notebook](3.time-based-analysis.ipynb).
