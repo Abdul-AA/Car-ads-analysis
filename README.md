@@ -112,4 +112,3 @@ These findings present a strategic opportunity for targeted marketing. Collabora
 
 For more information on the methodology, feature selection, thought process , results, business implications, threats to validity, and next steps, check the [time-based-analysis notebook](3.time-based-analysis.ipynb).
 
-In Closing, leveraging data-driven strategies as discussed will significantly enhance fraud detection efforts, optimize marketing, and improve the efficiency of risk assessment. By implementing a strategy that integrates cluster-based insights on vehicle risk profiles, detects anomalous vehicle claims, and utilizes temporal patterns, insurers can achieve substantial benefits. These advancements not only reduce costs and mitigate risks for insurers but also provide better service and value to policyholders.
