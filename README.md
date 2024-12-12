@@ -1,4 +1,4 @@
-# Data-Driven Strategies for Insurance Fraud Prevention and Risk Assessment
+# Data-Driven Strategies for Insurance Fraud Prevention and Vehicle Risk Assessment
 
 ## Introduction
 
