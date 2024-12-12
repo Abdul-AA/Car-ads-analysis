@@ -2,7 +2,7 @@
 
 ## Introduction
 
-According to the Insurance Bureau of Canada, insurance fraud costs Canadians well over $1 billion annually in added insurance premiums ([source](https://www.ibc.ca/news-insights/news/vigilance-is-key-in-fighting-insurance-fraud)). Addressing this challenge is critical, as reducing fraud not only lowers costs for insurers but also enhances customer satisfaction. To tackle this issue, I used the [Poland Cars for Sale dataset](https://www.kaggle.com/datasets/bartoszpieniak/poland-cars-for-sale-dataset) to perform vehicle segmentation, anomaly detection, and time series analysis. The overarching goal of this project is to provide actionable insights that can help insurers detect fraudulent activity, improve risk assessment, and optimize operational efficiency.
+According to the Insurance Bureau of Canada, insurance fraud costs Canadians well over $1 billion annually in added insurance premiums ([source](https://www.ibc.ca/news-insights/news/vigilance-is-key-in-fighting-insurance-fraud)). Addressing this challenge is critical, as reducing fraud not only lowers costs for insurers but also enhances customer satisfaction. To tackle this issue, I used the [Poland Cars for Sale dataset](https://www.kaggle.com/datasets/bartoszpieniak/poland-cars-for-sale-dataset) to perform vehicle segmentation, anomaly detection, and time series analysis. The overarching goal of this project is to provide actionable insights that can help insurers detect fraudulent activity, improve risk assessment, and enhance operational efficiency.
 
 ## Data Cleaning
 
