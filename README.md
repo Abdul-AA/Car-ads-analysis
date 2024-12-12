@@ -1,11 +1,11 @@
 # Optimizing Insurance Fraud Prevention and Risk Assessment 
 ## Introduction
 
-According to the Insurance Bureau of Canada, insurance fraud costs Canadians well over $1 billion a year in added insurance premiums ([source](https://www.ibc.ca/news-insights/news/vigilance-is-key-in-fighting-insurance-fraud)). Preventing this fraud will not only reduce costs for Definity but also improve customer satisfaction. In this project, using the [Poland Cars for Sale dataset](https://www.kaggle.com/datasets/bartoszpieniak/poland-cars-for-sale-dataset), I have performed vehicle segmentation, anomaly detection, and time series analysis with the goal of generating insights to enhance operational efficiency and streamline fraud prevention for Definity.
+According to the Insurance Bureau of Canada, insurance fraud costs Canadians well over $1 billion a year in added insurance premiums ([source](https://www.ibc.ca/news-insights/news/vigilance-is-key-in-fighting-insurance-fraud)). Preventing insurance fraud will not only reduce costs the insurer but also improve customer satisfaction. In this project, using the [Poland Cars for Sale dataset](https://www.kaggle.com/datasets/bartoszpieniak/poland-cars-for-sale-dataset), I have performed vehicle segmentation, anomaly detection, and time series analysis with the goal of generating insights to streamline insurance prevention and enhance operational efficiency.
 
 ## Data Cleaning
 
-A vast majority of the data cleaning process was dealing with null values. The dataset contains substantial null values in columns such as CO2 emissions, first owner (whether the vehicle has had one owner), vehicle version, vehicle generation, origin country, and car first registration day, as shown in **Figure 1**. For those columns that contained null values for about half of the dataset, the columns were dropped, except for "first owner," because I discerned that vehicles that are not first owners had null values, so I filled them accordingly. For the remaining few null values, those observations were dropped as they were not many and wouldn't lead to consequential information loss. Other preprocessing steps include creating a vehicle age column, standardizing currency, and converting the date columns to datetime format.
+A vast majority of the data cleaning process was dealing with null values. The dataset contains substantial null values in columns such as CO2 emissions, first owner (whether the vehicle has had one owner), vehicle version, vehicle generation, origin country, and car first registration day, as shown in **Figure 1**. For those columns that contained null values for about half of the dataset, the columns were dropped, except for "first owner," because I discerned that vehicles that are not first owners had null values, so I filled them accordingly. For the remaining few null values, those observations were dropped as they were not substantial enough to lead to consequential information loss. Other preprocessing steps include creating a vehicle age column, standardizing currency, and converting the date columns to datetime format.
 
 
 **Figure 1. Null Matrix Showing Distribution of Missing Data**
@@ -17,14 +17,14 @@ For insights from the exploratory data analysis step, refer to the [vehicle segm
 
 ## Vehicle Segmentation
 
-To streamline Definity's fraud prevention efforts and improve risk assessment, K-Prototypes clustering was applied to segment vehicles into three distinct groups. The features selected for clustering—mileage, engine power (HP), engine size, price, vehicle age, and body type—were chosen based on insights gained from exploratory data analysis (EDA) and their practical relevance to the business context. The optimal number of clusters was determined using the Elbow Method and Silhouette Scores, with three clusters offering the best balance between cluster cohesion and separation. K-Prototypes was specifically chosen for its ability to handle both categorical and numeric features, ensuring robust and interpretable segmentation despite the mixed data types. 
+To streamline Definity's fraud prevention efforts and improve risk assessment, K-Prototypes clustering was applied to segment vehicles into three distinct groups. The features selected for clustering—mileage, engine power (HP), engine size, price, vehicle age, and body type—were chosen based on insights gained from exploratory data analysis (EDA) and their practical relevance to the business context. The optimal number of clusters was determined using the Elbow Method and average Silhouette Scores, with three clusters offering the best balance between cluster cohesion and separation. K-Prototypes was specifically chosen for its ability to handle both categorical and numeric features, ensuring robust and interpretable segmentation despite the mixed data types. 
 
 The final clustering results yield an average silhouette score of 0.28, indicating that the samples within each cluster are relatively cohesive and well-separated from those in other clusters. As shown in Figure 2, there is clear separation between the clusters.  The identified clusters offer nuanced groupings of vehicles, each with distinct characteristics, as shown in **Table 1** and **Figure 2**. 
 - **Older City Commuters (Cluster 0)** are compact, older cars, predominantly city cars, with low engine power, high mileage, and affordability.
 - **Modern Power Vehicles (Cluster 1)** include newer, higher-powered vehicles, mainly SUVs, with lower mileage and higher prices. 
 - **Seasoned Family Travelers (Cluster 2)** consist of older, high-mileage vehicles, mostly station wagons, with larger engine sizes. 
 
-Valuable insights can be derived by analyzing historical data within each cluster to capture usage and claims patterns specific to each group. Definity can leverage these insights to detect frivolous claims, enhance underwriting efficiency by addressing information asymmetry through cluster-specific risk profiles and claims patterns, and develop targeted marketing strategies tailored to the preferences and behaviors of each group. For example, **Older City Commuters** may prefer budget-friendly coverage options and  **Modern Power Vehicles** may require premium plans with comprehensive coverage and additional perks. Claims deviating significantly from a vehicle’s cluster trends (e.g., unusually frequent or expensive claims) can be flagged for scrutiny, while clusters with higher fraud incidence can be monitored more intensively. Integrating these cluster-based insights into Definity's operations can mitigate financial risks, enhance underwriting precision, and improve customer experience.
+Valuable insights can be derived by analyzing historical data within each cluster to capture usage and claims patterns specific to each group. Definity can leverage these insights to detect frivolous claims, enhance underwriting efficiency by addressing information asymmetry through cluster-specific risk profiles and claims patterns, and develop targeted marketing strategies tailored to the preferences and behaviors of each group. For example, **Older City Commuters** may prefer budget-friendly coverage options and  **Modern Power Vehicles** may require premium plans with comprehensive coverage and additional perks. Additionally, claims deviating significantly from a vehicle’s cluster trends (e.g., unusually frequent or expensive claims) can be flagged for scrutiny, while clusters with higher fraud incidence can be monitored more intensively. Integrating these cluster-based insights into Definity's operations can mitigate financial risks, enhance underwriting precision, and improve customer experience.
 
 ### Cluster Centroids and Distribution
 
@@ -91,29 +91,6 @@ A comparison of anomalies and inliers revealed key patterns. For example, vehicl
 
 For more information on the methodology, feature selection, thought process , results, business implications, threats to validity, and next steps, check the [anomaly-detection notebook](2.anomaly-detection.ipynb).
 
-
-## Leveraging Temporal Patterns in the Volume of Vehicle Offers to Streamline Marketing 
-Just like in any business, effective marketing plays a huge role in the success off any insurance orgranization. However, it could be expensice so there should be arobust strategy to optimize  marketing efforts and roi getting the most of marketing spend. With the digitl age and adverts online becoming the norm, it allso for an insurance company imperative to properly position itself to ensure awareness pf its services. Which is why being able to detect temporal trends in car adverts volume especially on online platforms could prove useful in optimizing martenng efforts and aximising roi. For instance, partnering with ad platforms to align marketing campaigns with periods of high listing activity could improve ROI. Timing campaigns based on the trend of the last 5 days ensures more targeted and effective ad spend. so as people check vehicles listed in ads, they get avertd of policies tailored to their needs. Building on this, the car ads data was analysted for temporal patterns using decomposition techniques and autpcorrelation analysis to analyse daily average price  and daily offer volume. The two time variabkes present in the data are production year and offer publiction date. The latter was focused solely on as it is more actionable. The insights discerned aare ### 
-A notable observation is the abrupt surge in the number of offers around April 25 as shown in figure  5 Plots/daily_offers.png. This spike could potentially be attributed to annual seasonality or external factors, such as the platform gaining sudden popularity. Regardless of the cause, obtaining additional data spanning multiple years would be valuable to determine whether this is a recurring trend or a one-time anomaly.
-
-- There is significant positive autocorrelation at lower lags for up to 5 days, indicating short-term dependency in listing patterns. This means that the number of offers on a given day is strongly correlated with the volume of offers from the previous 5 days.  he observed short-term dependency in the number of vehicle offers over the preceding 5 days provides an opportunity for Definity to monitor ad data and optimize its marketing efforts accordingly.  
-- Beyond 5 days, the autocorrelation gradually diminishes and becomes slightly negative at around 9 days, indicating an inverse relationship at that lag. This negative autocorrelation, although not statistically significant, persists up to approximately 40 days.   
-- An abrupt surge in daily offers is evident around mid-April, peaking near April 25, followed by a sudden decline. This could be due to seasonal trends, data anomalies, or external factors such as platform changes.  
-- The average price fluctuates significantly, with an early spike driven by outliers, gradually stabilizing over time.  
-
-- Both daily offers and average prices exhibit weekly seasonality, suggesting user activity peaks on specific days, likely driven by platform usage habits.  
-
-- Significant residual variations in both metrics show unexpected  events or outliers not explained by the trend or seasonality components. These could be as a result of unusual listing behaviors or external factors. It is worth taking note that The irregularities in the data and the limited date range reduce the reliability of conclusions.
-- Outliers and potential data anomalies further challenge the robustness of the insights. Therefore, the recommendations are cautiously based on the identified short-term autocorrelation.
-
-
-figure 5
-Plots/daily_offers.png
-
-Plots/decomposition.png
-
-
-For more information, refer to 3.time_based_analysis.ipynb
 
 
 
