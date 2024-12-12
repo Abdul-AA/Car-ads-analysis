@@ -92,4 +92,42 @@ A comparison of anomalies and inliers revealed key patterns. For example, vehicl
 For more information on the methodology, feature selection, thought process , results, business implications, threats to validity, and next steps, check the [anomaly-detection notebook](2.anomaly-detection.ipynb).
 
 
-## Leveraging
+## Leveraging Temporal Patterns in the Volume of Vehicle Offers to Streamline Marketing 
+Just like in any business, effective marketing plays a huge role in the success off any insurance orgranization. However, it could be expensice so there should be arobust strategy to optimize  marketing efforts and roi getting the most of marketing spend. With the digitl age and adverts online becoming the norm, it allso for an insurance company imperative to properly position itself to ensure awareness pf its services. Which is why being able to detect temporal trends in car adverts volume especially on online platforms could prove useful in optimizing martenng efforts and aximising roi. For instance, partnering with ad platforms to align marketing campaigns with periods of high listing activity could improve ROI. Timing campaigns based on the trend of the last 5 days ensures more targeted and effective ad spend. so as people check vehicles listed in ads, they get avertd of policies tailored to their needs. Building on this, the car ads data was analysted for temporal patterns using decomposition techniques and autpcorrelation analysis to analyse daily average price  and daily offer volume. The two time variabkes present in the data are production year and offer publiction date. The latter was focused solely on as it is more actionable. The insights discerned aare ### 
+A notable observation is the abrupt surge in the number of offers around April 25 as shown in figure  5 Plots/daily_offers.png. This spike could potentially be attributed to annual seasonality or external factors, such as the platform gaining sudden popularity. Regardless of the cause, obtaining additional data spanning multiple years would be valuable to determine whether this is a recurring trend or a one-time anomaly.
+
+- There is significant positive autocorrelation at lower lags for up to 5 days, indicating short-term dependency in listing patterns. This means that the number of offers on a given day is strongly correlated with the volume of offers from the previous 5 days.  he observed short-term dependency in the number of vehicle offers over the preceding 5 days provides an opportunity for Definity to monitor ad data and optimize its marketing efforts accordingly.  
+- Beyond 5 days, the autocorrelation gradually diminishes and becomes slightly negative at around 9 days, indicating an inverse relationship at that lag. This negative autocorrelation, although not statistically significant, persists up to approximately 40 days.   
+- An abrupt surge in daily offers is evident around mid-April, peaking near April 25, followed by a sudden decline. This could be due to seasonal trends, data anomalies, or external factors such as platform changes.  
+- The average price fluctuates significantly, with an early spike driven by outliers, gradually stabilizing over time.  
+
+- Both daily offers and average prices exhibit weekly seasonality, suggesting user activity peaks on specific days, likely driven by platform usage habits.  
+
+- Significant residual variations in both metrics show unexpected  events or outliers not explained by the trend or seasonality components. These could be as a result of unusual listing behaviors or external factors. It is worth taking note that The irregularities in the data and the limited date range reduce the reliability of conclusions.
+- Outliers and potential data anomalies further challenge the robustness of the insights. Therefore, the recommendations are cautiously based on the identified short-term autocorrelation.
+
+
+figure 5
+Plots/daily_offers.png
+
+Plots/decomposition.png
+
+
+For more information, refer to 3.time_based_analysis.ipynb
+
+
+
+
+## Leveraging Temporal Patterns in Vehicle Offers to Streamline Marketing Strategies
+
+Effective marketing is crucial for the success of any insurance organization, but it can be costly. To optimize efforts and maximize ROI, a robust strategy is essential. In the digital age, where online advertisements dominate, insurance companies must position themselves strategically to raise awareness of their services. One promising approach is detecting temporal trends in car advertisement volumes, particularly on online platforms, to enhance the effectiveness of marketing campaigns.
+
+A time-based analysis of car advertisement data focused on offer publication dates, as this time based variable is more actionable for insurance companies compared to production year. Autocorrelation analysis shows a significant positive autocorrelation in offer volumes for up to five days (lag 5), as illustrated in Figure 5. This indicates that the number of vehicle offers on a given day is strongly correlated with listing volumes from the preceding days. Additionally, a notable surge in offer volumes was observed around April 25, as shown in Figure 6. This spike likely stems from external factors unrelated to trend or seasonality, but verifying if this is a seasonal pattern would require data spanning multiple years.
+
+These findings present a strategic opportunity for targeted marketing. Collaborating with advertisement platforms to time campaigns during periods of high listing activity, as predicted by trends from the previous five days, can improve ROI. Such an approach ensures that potential customers viewing vehicle listings are simultaneously exposed to tailored insurance offers. However, irregularities like the abrupt volume spike and the limited data range necessitate cautious interpretation of results. Further data analysis on data that spans a longer time period is recommended to confirm the broader applicability of these trends.
+
+**Figure 5. Autocorrelation Plot of Daily Offers**  
+![Autocorrelation Plot](Plots/autocorr.png)
+
+**Figure 6. Daily Offers Over Time**  
+![Daily Offers Over Time](Plots/daily_offers.png)
