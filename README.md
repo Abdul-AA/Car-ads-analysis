@@ -14,11 +14,11 @@ A vast majority of the data cleaning process was dealing with null values. The d
 ![Null Matrix](Plots/null_matrix.png)
 
 
-For insights from the exploratory data analysis step, refer to the [vehicle segmentation notebook](1.vehicle-segmentation.ipynb).
+For more details on the data cleaning steps and insights from the exploratory data analysis step, refer to the [vehicle segmentation notebook](1.vehicle-segmentation.ipynb).
 
 ## Vehicle Segmentation
 
-To streamline insurance fraud prevention efforts and improve risk assessment, K-Prototypes clustering was applied to segment vehicles into three distinct groups. The features selected for clustering—mileage, engine power (HP), engine size, price, vehicle age, and body type—were chosen based on insights gained from exploratory data analysis (EDA) and the business relevance of the features. The optimal number of clusters was determined using the Elbow Method and average Silhouette Scores, with three clusters offering the best balance between cluster cohesion and separation. K-Prototypes was specifically chosen for its ability to handle both categorical and numeric features, ensuring robust and interpretable segmentation despite the mixed data types.
+To streamline insurance fraud prevention efforts and improve risk assessment, K-Prototypes clustering was applied to segment vehicles into three distinct groups. The features selected for clustering—mileage, engine power (HP), engine size, price, vehicle age, and body type—were chosen based on insights gained from exploratory data analysis (EDA) and the business relevance of the features. After preprocessing the data, including outlier removal using the IQR method and standardizing the numeric features (as K-Prototypes is distance-based), the optimal number of clusters was determined using the Elbow Method and average Silhouette Scores. Three clusters provided the best balance between cohesion within clusters and separation between them. K-Prototypes was specifically chosen for its ability to handle both categorical and numeric features, ensuring robust and interpretable segmentation despite the mixed data types.
 
 The final clustering results yield an average silhouette score of 0.28, indicating that the samples within each cluster are relatively cohesive and farily separated from those in other clusters. As shown in Figure 2, there is clear separation between the clusters. The identified clusters offer nuanced groupings of vehicles, each with distinct characteristics, as shown in **Table 1** and **Figure 2**. 
 - **Older City Commuters (Cluster 0)** are compact, older cars, predominantly city cars, with low engine power, high mileage, and affordability.
