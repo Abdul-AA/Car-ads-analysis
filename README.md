@@ -1,11 +1,11 @@
-# Optimizing Insurance Fraud Prevention and Risk Assessment 
+# Data-Driven Strategies for Insurance Fraud Prevention and Risk Assessment
 ## Introduction
 
 According to the Insurance Bureau of Canada, insurance fraud costs Canadians well over $1 billion a year in added insurance premiums ([source](https://www.ibc.ca/news-insights/news/vigilance-is-key-in-fighting-insurance-fraud)). Preventing insurance fraud will not only reduce costs the insurer but also improve customer satisfaction. In this project, using the [Poland Cars for Sale dataset](https://www.kaggle.com/datasets/bartoszpieniak/poland-cars-for-sale-dataset), I have performed vehicle segmentation, anomaly detection, and time series analysis with the goal of generating insights to streamline insurance prevention and enhance operational efficiency.
 
 ## Data Cleaning
 
-A vast majority of the data cleaning process was dealing with null values. The dataset contains substantial null values in columns such as CO2 emissions, first owner (whether the vehicle has had one owner), vehicle version, vehicle generation, origin country, and car first registration day, as shown in **Figure 1**. For those columns that contained null values for about half of the dataset, the columns were dropped, except for "first owner," because I discerned that vehicles that are not first owners had null values, so I filled them accordingly. For the remaining few null values, those observations were dropped as they were not substantial enough to lead to consequential information loss. Other preprocessing steps include creating a vehicle age column, standardizing currency, and converting the date columns to datetime format.
+A vast majority of the data cleaning process was dealing with null values. The dataset contains substantial null values in columns such as CO2 emissions, first owner (whether the vehicle has had one owner), vehicle version, vehicle generation, origin country, and car first registration day, as shown in **Figure 1**. Columns with null values in approximately half of the dataset were mostly dropped, except for "first owner." I noticed that vehicles not identified as having a single previous owner had null values in this column, so I filled them accordingly. For the remaining few null values, those observations were dropped as they were not substantial enough to lead to consequential information loss. Other preprocessing steps include creating a vehicle age column, standardizing currency, and converting the date columns to datetime format.
 
 
 **Figure 1. Null Matrix Showing Distribution of Missing Data**
